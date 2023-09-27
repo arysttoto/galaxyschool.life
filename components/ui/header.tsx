@@ -10,7 +10,7 @@ import { Session } from "next-auth";
 import Image from 'next/image'
 import { signOut } from 'next-auth/react'
 
-export default function Header({ session }: { session: Session | null }) {
+export default function Header({ session }: { session: Session | any }) {
   const [top, setTop] = useState<boolean>(true)
 
   // detect whether user has scrolled the page down by 10px
@@ -38,7 +38,7 @@ export default function Header({ session }: { session: Session | null }) {
           <nav className="hidden md:flex md:grow">
             {/* Desktop sign in links */}
             <ul className="flex grow justify-end flex-wrap items-center">
-              {session ? <li><Image class="rounded-full" width={40} height={40} src={session.user?.image} alt="Rounded avatar" /></li> : <></>}
+              {session ? <li><Image className="rounded-full" width={40} height={40} src={session.user?.image || '/images/unknown.png'} alt="Rounded avatar" /></li> : <></>}
               <li>
                 {!session ?
                 <Link href="/signup" className="btn-sm text-gray-200 bg-gray-900 hover:bg-gray-800 ml-3">
