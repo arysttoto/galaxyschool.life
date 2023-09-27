@@ -12,7 +12,7 @@ export default function FeaturesBlocks() {
           {/* Section header */}
           <div className="max-w-3xl mx-auto text-center pb-12 md:pb-20">
             <h2 className="h2 mb-4">What is Galaxy School Life?</h2>
-            <p className="text-xl text-gray-600">It is a website built to connect Galaxy students digitally, giving them freedom of choice and tools to improve the school.</p>
+            <p className="text-xl text-gray-600">It is a website built by Arystan Kairbayev from 10A, as a first step to digitalize Galaxy and make school life easier, read some features below: </p>
           </div>
 
           {/* Items */}
