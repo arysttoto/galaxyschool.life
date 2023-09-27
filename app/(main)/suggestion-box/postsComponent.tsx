@@ -4,15 +4,19 @@ import Image from "next/image";
 
 async function PostsComponent({ session }: { session: Session | any }) { 
     const thoughts = await prisma.thought.findMany({
-        include: {
-          user: {
-            select: {
-              name: true,
-              image: true 
-            },
+      include: {
+        user: {
+          select: {
+            name: true,
+            image: true,
           },
         },
-    }); 
+      },
+      orderBy: {
+        createdAt: 'desc', // Sort by createdAt in descending order 
+      },
+    });
+  
     return (
         <>
         <div>
