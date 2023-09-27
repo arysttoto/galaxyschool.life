@@ -43,11 +43,6 @@ function FormThought({ session }: { session: Session | any }) {
     <>
       <div className="w-11/12 md:w-9/12 sm:w-9/12 bg-white shadow-xl rounded-2xl transform -translate-y-5 p-5">
         <section className="w-full flex px-3 py-2">
-          {isLoading ? (
-            <p className='text-yellow-600 text-lg'>Loading... </p>
-          ) : (
-            <p className='text-yellow-600 text-lg'>{message} </p>
-          )}
           <div className="mr-1">
             <Image
               className="rounded-full"
@@ -76,8 +71,13 @@ function FormThought({ session }: { session: Session | any }) {
                     type="submit"
                     disabled={isLoading} // Disable the button when loading
                   >
-                    {isLoading ? 'Creating...' : 'Create Thought!'}
+                    {isLoading ? 'Creating...' : 'Create Thought!'} 
                   </button>
+                  {isLoading ? (
+                    <p className='text-yellow-600 text-lg'>Loading... </p>
+                  ) : (
+                    <p className='text-yellow-600 text-lg'>{message} </p>
+                  )} 
                 </div>
               </div>
             </form>
