@@ -64,7 +64,7 @@ function FormThought({ session }: { session: Session | any }) {
             >
               <textarea
                 className="w-full p-2 bg-transparent outline-none placeholder-gray-400 text-gray-600 resize-none rounded-xl border border-gray-200"
-                rows="4"
+                rows={4}
                 placeholder="Why there are no clubs?!"
                 value={content}
                 onChange={handleContentChange} 
