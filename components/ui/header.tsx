@@ -6,9 +6,11 @@ import Link from 'next/link'
 import Logo from './logo'
 import Dropdown from '@/components/utils/dropdown'
 import MobileMenu from './mobile-menu'
+import { Session } from "next-auth";
+import Image from 'next/image'
+import { signOut } from 'next-auth/react'
 
-export default function Header() {
-
+export default function Header({ session }: { session: Session | null }) {
   const [top, setTop] = useState<boolean>(true)
 
   // detect whether user has scrolled the page down by 10px
@@ -22,7 +24,7 @@ export default function Header() {
     return () => window.removeEventListener('scroll', scrollHandler)
   }, [top])
 
-  return (
+  return (      
     <header className={`fixed w-full z-30 md:bg-opacity-90 transition duration-300 ease-in-out ${!top ? 'bg-white backdrop-blur-sm shadow-lg' : ''}`}>
       <div className="max-w-6xl mx-auto px-5 sm:px-6">
         <div className="flex items-center justify-between h-16 md:h-20">
@@ -36,16 +38,21 @@ export default function Header() {
           <nav className="hidden md:flex md:grow">
             {/* Desktop sign in links */}
             <ul className="flex grow justify-end flex-wrap items-center">
+              {session ? <li><Image class="rounded-full" width={40} height={40} src={session.user?.image} alt="Rounded avatar" /></li> : <></>}
               <li>
-                <Link href="/signin" className="font-medium text-gray-600 hover:text-gray-900 px-5 py-3 flex items-center transition duration-150 ease-in-out">Sign in</Link>
-              </li>
-              <li>
+                {!session ?
                 <Link href="/signup" className="btn-sm text-gray-200 bg-gray-900 hover:bg-gray-800 ml-3">
                   <span>Sign up</span>
                   <svg className="w-3 h-3 fill-current text-gray-400 shrink-0 ml-2 -mr-1" viewBox="0 0 12 12" xmlns="http://www.w3.org/2000/svg">
                     <path d="M11.707 5.293L7 .586 5.586 2l3 3H0v2h8.586l-3 3L7 11.414l4.707-4.707a1 1 0 000-1.414z" fillRule="nonzero" />
                   </svg>
-                </Link>
+                </Link> : 
+                <button onClick={() => signOut()} className="btn-sm text-gray-200 bg-gray-900 hover:bg-gray-800 ml-3">
+                <span>Sign out</span> 
+                <svg className="w-3 h-3 fill-current text-gray-400 shrink-0 ml-2 -mr-1" viewBox="0 0 12 12" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M11.707 5.293L7 .586 5.586 2l3 3H0v2h8.586l-3 3L7 11.414l4.707-4.707a1 1 0 000-1.414z" fillRule="nonzero" />
+                </svg>
+                </button>}
               </li>
             </ul>
 
