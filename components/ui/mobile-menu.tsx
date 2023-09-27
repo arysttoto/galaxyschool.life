@@ -68,7 +68,7 @@ export default function MobileMenu({ session }: { session: Session | any }) {
           <ul className="px-5 py-2">
             <li>
               {session ? <Link href="/suggestion-box" className="flex font-medium w-full text-gray-600 hover:text-gray-900 py-2 justify-center" onClick={() => setMobileNavOpen(false)}>Digital Suggestion Box</Link>:
-              <Link href="/signin" className="flex font-medium w-full text-gray-600 hover:text-gray-900 py-2 justify-center" onClick={() => setMobileNavOpen(false)}>Sign in</Link>}
+              <Link href="#about" className="flex font-medium w-full text-gray-600 hover:text-gray-900 py-2 justify-center" onClick={() => setMobileNavOpen(false)}>About the website!</Link>}
             </li>
             <li>
               { session ? 
