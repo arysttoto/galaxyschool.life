@@ -29,7 +29,13 @@ async function PostsComponent({ session }: { session: Session | any }) {
                     {/* <a className="text-blue-600 hover:underline" href="#">Like</a> */}
                     <div>
                         <a className="flex items-center" href="#">
-                            <Image className="mx-4 object-cover rounded-full hidden sm:block" height={25} width={25} src={thought.user.image} alt="avatar" />
+                        <Image
+                          className="mx-4 object-cover rounded-full hidden sm:block"
+                          height={25}
+                          width={25}
+                          src={thought.user.image || '/images/unknown.png'} // Provide a fallback image source
+                          alt="avatar"
+                        />
                             <h1 className="text-gray-700 font-bold">{thought.user.name}</h1>
                         </a>
                     </div>
