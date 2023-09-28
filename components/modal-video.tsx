@@ -35,7 +35,7 @@ export default function ModalVideo({
         <div className="relative flex justify-center mb-8" data-aos="zoom-y-out" data-aos-delay="450">
           <div className="flex flex-col justify-center">
             <Image src={thumb} width={thumbWidth} height={thumbHeight} alt={thumbAlt} />
-            <svg className="absolute inset-0 max-w-full mx-auto md:max-w-none h-auto" width="768" height="432" viewBox="0 0 768 432" xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink">
+            {/* <svg className="absolute inset-0 max-w-full mx-auto md:max-w-none h-auto" width="768" height="432" viewBox="0 0 768 432" xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink">
               <defs>
                 <linearGradient x1="50%" y1="0%" x2="50%" y2="100%" id="hero-ill-a">
                   <stop stopColor="#FFF" offset="0%" />
@@ -62,8 +62,12 @@ export default function ModalVideo({
                   <use fill="url(#hero-ill-e)" xlinkHref="#hero-ill-d" />
                 </g>
               </g>
-            </svg>
+            </svg> */}
           </div>
+          <a className="absolute flex items-center transform -translate-y-1/2 bg-white rounded-full font-medium group p-4 shadow-lg" href="https://www.canva.com/design/DAFvpheXjQU/d2mag7XJa2fru59fPeJYuA/edit?utm_content=DAFvpheXjQU&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" className="w-6 h-6 text-gray-400 group-hover:text-blue-600 shrink-0"><path d="M2 3h20"/><path d="M21 3v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V3"/><path d="m7 21 5-5 5 5"/></svg>
+              <span className="ml-3">Check out the presentation!</span> 
+          </a>
           <button className="absolute top-full flex items-center transform -translate-y-1/2 bg-white rounded-full font-medium group p-4 shadow-lg" onClick={() => { setModalOpen(true) }}>
             <svg className="w-6 h-6 fill-current text-gray-400 group-hover:text-blue-600 shrink-0" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
               <path d="M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10zm0 2C5.373 24 0 18.627 0 12S5.373 0 12 0s12 5.373 12 12-5.373 12-12 12z" />
