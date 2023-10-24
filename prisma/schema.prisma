@@ -1,6 +1,3 @@
-// This is your Prisma schema file,
-// learn more about it in the docs: https://pris.ly/d/prisma-schema
-
 generator client {
   provider = "prisma-client-js"
 }
@@ -11,22 +8,21 @@ datasource db {
 }
 
 model Account {
-  id                 String  @id @default(cuid())
-  userId             String
-  type               String
-  provider           String
-  providerAccountId  String
-  refresh_token      String?  @db.Text
-  access_token       String?  @db.Text
-  expires_at         Int?
-  token_type         String?
-  scope              String?
-  id_token           String?  @db.Text
-  session_state      String?
+  id                String  @id @default(cuid())
+  userId            String
+  type              String
+  provider          String
+  providerAccountId String
+  refresh_token     String?
+  access_token      String?
+  expires_at        Int?
+  token_type        String?
+  scope             String?
+  id_token          String?
+  session_state     String?
+  user              User    @relation(fields: [userId], references: [id], onDelete: Cascade)
 
-  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
-
-  @@unique([provider, providerAccountId]) 
+  @@unique([provider, providerAccountId])
   @@index([userId])
 }
 
@@ -36,6 +32,7 @@ model Session {
   userId       String
   expires      DateTime
   user         User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+
   @@index([userId])
 }
 
@@ -48,10 +45,9 @@ model User {
   createdAt     DateTime  @default(now())
   updatedAt     DateTime  @updatedAt
   accounts      Account[]
+  likes         Like[]
   sessions      Session[]
-  thoughts    Thought[]    
-  likes       Like[]     
-  // helpTickets HelpTicket[] 
+  thoughts      Thought[]
 }
 
 model VerificationToken {
@@ -63,36 +59,21 @@ model VerificationToken {
 }
 
 model Thought {
-  id            Int       @id @default(autoincrement()) 
-  text         String 
-  createdAt     DateTime  @default(now()) 
-  updatedAt     DateTime  @updatedAt  
-
-  userId        String 
-  user          User @relation(fields: [userId], references: [id])
-
-  // Add a new field to track likes 
-  likes Like[] 
-} 
-
-model Like {
-  id         Int       @id @default(autoincrement())
-  createdAt  DateTime  @default(now())
-  updatedAt  DateTime  @updatedAt
-  userId     String
-  user       User      @relation(fields: [userId], references: [id]) // Relation to User model
-
-  // Define a reference to the Thought model 
-  thought    Thought   @relation(fields: [thoughtId], references: [id])     
-  thoughtId  Int  
+  id        Int      @id @default(autoincrement())
+  text      String
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+  userId    String
+  likes     Like[]
+  user      User     @relation(fields: [userId], references: [id], onDelete: Cascade)
 }
 
-// model HelpTicket {
-//   id            Int       @id @default(autoincrement()) 
-//   text         String 
-//   createdAt     DateTime  @default(now()) 
-//   updatedAt     DateTime  @updatedAt  
-
-//   userId        String 
-//   user          User @relation(fields: [userId], references: [id])
-// }
+model Like {
+  id        Int      @id @default(autoincrement())
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+  userId    String
+  thoughtId Int
+  thought   Thought  @relation(fields: [thoughtId], references: [id], onDelete: Cascade)
+  user      User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+} 
