@@ -1,4 +1,4 @@
-import VideoThumb from '@/public/images/hero-image.png'
+import VideoThumb from '@/public/images/hero-image.jpeg'
 import ModalVideo from '@/components/modal-video'
 
 // next-auth 
