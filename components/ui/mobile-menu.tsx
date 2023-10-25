@@ -71,6 +71,9 @@ export default function MobileMenu({ session }: { session: Session | any }) {
               <Link href="#about" className="flex font-medium w-full text-gray-600 hover:text-gray-900 py-2 justify-center" onClick={() => setMobileNavOpen(false)}>About the website!</Link>}
             </li>
             <li>
+            <Link href="/galaxy-life" className="flex font-medium w-full text-gray-600 hover:text-gray-900 py-2 justify-center" onClick={() => setMobileNavOpen(false)}>School Magazine</Link>
+            </li>
+            <li>
               { session ? 
               <button className="btn-sm text-gray-200 bg-gray-900 hover:bg-gray-800 w-full my-2" onClick={() => signOut()}>
                 <span>Sign out</span>
