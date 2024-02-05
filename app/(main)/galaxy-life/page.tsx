@@ -8,7 +8,7 @@ import { defaultLayoutPlugin } from '@react-pdf-viewer/default-layout';
 function GalaxyLife() {
   const defaultLayoutPluginInstance = defaultLayoutPlugin();
 
-  const [selectedIssue, setSelectedIssue] = useState("issue_2"); // Default issue number
+  const [selectedIssue, setSelectedIssue] = useState("issue_3"); // Default issue number
 
   const handleIssueChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
     setSelectedIssue(e.target.value);
@@ -29,11 +29,12 @@ function GalaxyLife() {
         id="issue_select"
         className="block py-2.5 px-0 w-full text-md text-gray-500 bg-transparent border-0 border-b-2 border-gray-200 appearance-none dark:text-gray-400 dark:border-gray-700 focus:outline-none focus:ring-0 focus:border-gray-200 peer"
         value={selectedIssue}
-        onChange={handleIssueChange}
+        onChange={handleIssueChange} 
         style={{ color: 'black' }} // Add this inline style
       >
         <option value="issue_1">December/January 2023</option>
         <option value="issue_2">September/October 2023</option>
+        <option value="issue_3">January/February 2024</option>
       </select>
       <Worker workerUrl="https://unpkg.com/pdfjs-dist@3.4.120/build/pdf.worker.js">
         <div className="lg:mt-8 mt-4 lg:m-0 m-4">
