@@ -34,7 +34,7 @@ function GalaxyLife() {
       >
         <option value="issue_1">December/January 2023</option>
         <option value="issue_2">September/October 2023</option>
-        <option value="issue_3">January/February 2024</option>
+        <option value="issue_3">November/December 2023</option>
       </select>
       <Worker workerUrl="https://unpkg.com/pdfjs-dist@3.4.120/build/pdf.worker.js">
         <div className="lg:mt-8 mt-4 lg:m-0 m-4">
