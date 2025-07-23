@@ -2,7 +2,7 @@
 import { Session } from "next-auth";
 import Image from "next/image";
 
-import { useState } from 'react'; // Import useState
+import { useState } from 'react'; 
 
 function SingleThought({ thought }: { thought: any }) {
   const [liked, setLiked] = useState(thought.likedBySpecificUser); // Initialize liked state

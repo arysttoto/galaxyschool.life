@@ -14,11 +14,6 @@ function GalaxyLife() {
     setSelectedIssue(e.target.value);
   };
 
-  // useEffect(() => {
-  //   // Perform any additional actions or updates when the selected issue changes.
-  //   // You can load data specific to the selected issue here.
-  // }, [selectedIssue]); 
-
   return (
     <>
     <div className="mx-6 my-20 lg:my-32 lg:mx-40">
