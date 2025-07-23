@@ -8,7 +8,15 @@ A Next‑JS & TypeScript web app built to streamline the high‑school experienc
 
 ## 📱 Demo Video
 
-[![Watch the demo](public/images/readme/demonstration.png)](https://youtube.com/shorts/VuWC_Mjylpw) 
+<p>
+  ▶️ Click the image below to watch a short demo of the app in action (recorded on mobile):
+</p>
+
+<a href="https://youtube.com/shorts/VuWC_Mjylpw" target="_blank">
+  <img src="public/images/readme/demonstration.png" width="400" alt="Watch the demo" />
+</a>
+
+<hr />
 
 ---
 
