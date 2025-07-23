@@ -8,7 +8,7 @@ A Next‑JS & TypeScript web app built to streamline the high‑school experienc
 
 ## 📱 Demo Video
 
-![Watch the demo](public/images/readme/demonstration.MP4)
+![Watch the demo](https://youtube.com/shorts/VuWC_Mjylpw) 
 
 ---
 
@@ -59,7 +59,7 @@ During my term as Student Council President, I saw firsthand how hard it is to c
 
 ## 📸 Screenshots
 
-![Home Dashboard](public/images/readme/homepage.png)  
+![Home Dashboard](public/images/readme/mainpage.png)  
 ![Sign In Page](public/images/readme/signinpage.png)
 ![About Page](public/images/readme/aboutpage.png)  
 ![News Feed](public/images/readme/magazinepage.png)
